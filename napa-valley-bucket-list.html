@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Napa Valley: The Bucket List Weekend | Oct 7–11, 2027</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream:#F7F2EB;
+  --plum:#5A1E4A;
+  --lilac:#D8C4E8;
+  --gold:#C8A05A;
+  --charcoal:#333333;
+  --white:#FAF8F4;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  font-family:Montserrat, sans-serif;
+  background:var(--cream);
+  color:var(--charcoal);
+  line-height:1.7;
+}
+
+header {
+  background:var(--plum);
+  color:var(--cream);
+  padding:24px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo {
+  font-family:Allura, cursive;
+  font-size:36px;
+  color:var(--gold);
+  text-decoration:none;
+}
+
+header nav a {
+  color:var(--cream);
+  text-decoration:none;
+  font-size:14px;
+}
+
+section { padding:70px 8%; }
+
+h1, h2, h3 {
+  font-family:"Cormorant Garamond", serif;
+  color:var(--plum);
+}
+
+.hero {
+  text-align:center;
+  background:linear-gradient(135deg,rgba(216,196,232,.5),rgba(247,242,235,.95));
+}
+
+.hero .tag {
+  display:inline-block;
+  background:var(--gold);
+  color:var(--plum);
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  padding:6px 18px;
+  border-radius:20px;
+  margin-bottom:20px;
+}
+
+.hero h1 {
+  font-size:58px;
+  line-height:1.05;
+  margin:0 0 6px;
+}
+
+.hero .script {
+  font-family:Allura, cursive;
+  font-size:40px;
+  color:var(--plum);
+  margin:0 0 16px;
+}
+
+.hero .subline {
+  font-size:19px;
+  color:var(--plum);
+  margin-bottom:30px;
+  max-width:650px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.section-intro {
+  text-align:center;
+  max-width:750px;
+  margin:0 auto 30px;
+  font-size:17px;
+}
+
+h2 {
+  font-size:42px;
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.gold-line {
+  width:90px;
+  height:3px;
+  background:var(--gold);
+  margin:25px auto;
+}
+
+.button {
+  display:inline-block;
+  background:var(--plum);
+  color:var(--cream);
+  padding:14px 26px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+}
+
+.button:hover { background:#471939; }
+
+.button.gold {
+  background:var(--gold);
+  color:var(--plum);
+}
+
+.button.gold:hover { background:#b58f4c; }
+
+.button.disabled {
+  background:#ccc;
+  color:#777;
+  cursor:not-allowed;
+  pointer-events:none;
+}
+
+.story {
+  background:var(--white);
+  max-width:800px;
+  margin:0 auto;
+}
+
+.day-block {
+  max-width:800px;
+  margin:0 auto 36px;
+  background:var(--white);
+  border-left:4px solid var(--gold);
+  border-radius:0 20px 20px 0;
+  padding:30px 34px;
+}
+
+.day-block h3 {
+  font-size:26px;
+  margin-top:0;
+  margin-bottom:10px;
+}
+
+.day-block .day-tag {
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.vip-box {
+  background:var(--plum);
+  color:var(--cream);
+  border-radius:24px;
+  max-width:850px;
+  margin:0 auto;
+  padding:40px 44px;
+}
+
+.vip-box h3 {
+  color:var(--gold);
+  margin-top:0;
+}
+
+.vip-box .day-tag { color:var(--lilac); }
+
+.included-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  max-width:900px;
+  margin:0 auto;
+}
+
+.included-grid h3 { font-size:22px; margin-bottom:10px; }
+.included-grid ul { padding-left:20px; margin:0; }
+.included-grid li { margin-bottom:8px; }
+
+.notice {
+  background:var(--plum);
+  color:var(--cream);
+  border-radius:24px;
+  max-width:850px;
+  margin:40px auto 0;
+  padding:36px 40px;
+}
+
+.notice h3 { color:var(--gold); margin-top:0; }
+.notice p { font-size:15px; }
+
+.packages {
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+  max-width:800px;
+  margin:0 auto;
+}
+
+.package-card {
+  background:var(--white);
+  border:1px solid var(--gold);
+  border-radius:24px;
+  padding:30px 34px;
+  box-shadow:0 12px 30px rgba(90,30,74,.08);
+}
+
+.package-card.sold-out {
+  opacity:.7;
+}
+
+.package-card .avail {
+  display:inline-block;
+  font-size:12px;
+  color:var(--plum);
+  background:var(--lilac);
+  padding:3px 12px;
+  border-radius:14px;
+  margin-bottom:10px;
+  font-weight:600;
+}
+
+.package-card .avail.sold-out-tag {
+  background:#e0c9c9;
+  color:#7a2b2b;
+}
+
+.package-card h3 { font-size:26px; margin:0 0 6px; }
+
+.package-card .price-row {
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  margin-bottom:14px;
+  flex-wrap:wrap;
+}
+
+.package-card .price {
+  font-family:"Cormorant Garamond", serif;
+  font-size:34px;
+  color:var(--plum);
+  font-weight:700;
+}
+
+.package-card .deposit { font-size:14px; color:var(--charcoal); }
+.package-card p { font-size:15px; }
+
+.fine-print {
+  font-size:12px;
+  color:#777;
+  margin-top:14px;
+}
+
+.extra-option {
+  max-width:800px;
+  margin:40px auto 0;
+  background:var(--lilac);
+  border-radius:20px;
+  padding:30px 34px;
+}
+
+.extra-option h3 { margin-top:0; }
+
+.faq-note {
+  text-align:center;
+  max-width:750px;
+  margin:50px auto 0;
+  font-size:14px;
+  color:var(--charcoal);
+}
+
+footer {
+  background:var(--plum);
+  color:var(--cream);
+  text-align:center;
+  padding:40px 8%;
+}
+
+footer .logo { font-size:44px; }
+
+footer .foot-links a {
+  color:var(--lilac);
+  margin:0 10px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+footer .foot-links a:hover { color:var(--gold); }
+
+@media(max-width:850px){
+  .included-grid { grid-template-columns:1fr; }
+  .hero h1 { font-size:38px; }
+  .hero .script { font-size:28px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="index.html">RO</a>
+  <nav>
+    <a href="index.html">Back to Ro's Page</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <span class="tag">Napa Valley, California &nbsp;•&nbsp; October 7–11, 2027</span>
+  <h1>Napa Valley</h1>
+  <p class="script">The Bucket List Weekend</p>
+  <p class="subline">Some places aren't just a destination. They're the reason bucket lists exist.</p>
+  <a class="button" href="#packages">See Packages & Book</a>
+</section>
+
+<section class="story">
+  <p>You've talked about Napa Valley for years. Watched friends go. Saved the pictures. Told yourself, <em>"One day."</em></p>
+
+  <p><strong>This is the weekend that turns "one day" into "I'm going."</strong></p>
+
+  <p>The Bucket List Weekend was created for women who are ready to stop talking about Napa Valley and finally experience it for themselves. You don't have to figure out where to stay, which wineries to visit, or how to plan the perfect itinerary. Just pack your bags, bring your sense of adventure, and get ready to experience Napa Valley the way you've always imagined.</p>
+
+  <p>You'll stay at a thoughtfully selected hotel in the heart of Napa Valley, conveniently located near many of the experiences that make this destination so unforgettable. Each morning begins with a complimentary breakfast before setting out to explore wine country, every detail already taken care of.</p>
+
+  <div class="gold-line"></div>
+</section>
+
+<section class="lilac">
+  <h2>The Weekend</h2>
+
+  <div class="day-block">
+    <span class="day-tag">Friday</span>
+    <h3>All Black Everything</h3>
+    <p>Your Bucket List Weekend begins in the heart of Downtown Napa with our Welcome Dinner. Think All Black Everything — a dress, a jumpsuit, a skirt, or your favorite evening look. We'll gather over incredible food, smooth R&B, great wine, and an atmosphere that sets the tone for everything about to unfold. When dinner ends, the night doesn't have to — explore Downtown Napa with the group or head back to relax before another unforgettable day in wine country.</p>
+  </div>
+
+  <div class="day-block">
+    <span class="day-tag">Saturday</span>
+    <h3>Black-Owned & Unforgettable</h3>
+    <p>Relax with private chauffeured transportation as your journey winds through Napa Valley, discovering exceptional Black-owned wineries, thoughtfully paired small bites, remarkable wines, breathtaking vineyard views, and the stories behind every bottle. We'll stop at the iconic Napa Valley Welcome Sign for the photo that says, "I finally made it."</p>
+  </div>
+
+  <div class="day-block">
+    <span class="day-tag">Sunday</span>
+    <h3>The Legend Itself</h3>
+    <p>Step aboard the legendary Napa Valley Wine Train for an unforgettable six-hour journey through the heart of wine country. Begin with a welcome glass of sparkling wine, settle into beautifully restored vintage railcars, and enjoy a gourmet four-course meal prepared fresh onboard. Step off at three distinctive winery destinations for guided tastings, then relax in the open-air railcar as vineyard views stretch for miles, with music, dancing, and timeless elegance the whole way.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Optional VIP Arrival Experience</h2>
+  <p class="section-intro">Arrive Thursday. Experience more.</p>
+
+  <div class="vip-box">
+    <span class="day-tag">Thursday, October 7, 2027 &nbsp;•&nbsp; 3-Night Package Only</span>
+    <h3>An Extraordinary Beginning</h3>
+    <p>For those who believe one bucket list experience deserves another, your Napa Valley story begins one day earlier. With private chauffeured transportation, you'll step inside the blending lab and work alongside wine professionals to create your own signature wine — blend it, bottle it, design your own personalized label, and leave with a handcrafted keepsake that's uniquely yours.</p>
+    <p>A lab coat is provided for the blending experience, so just pack comfortable flats. Afterward, slip into your favorite heels as the evening transitions into an elegant cocktail hour with exceptional wines, beautifully presented hors d'oeuvres, and an upscale dining experience in one of Napa Valley's most memorable settings.</p>
+    <p style="font-size:14px;color:var(--lilac);">Requires a minimum of 10 guests. If the minimum isn't met, the VIP Arrival Experience won't be offered and all VIP payments are fully refunded — your Bucket List Weekend reservation stays unchanged either way. Not available with the 2-night package, and cannot be purchased as a standalone experience.</p>
+  </div>
+</section>
+
+<section class="lilac">
+  <h2>What's Included</h2>
+  <div class="included-grid">
+    <div>
+      <h3 style="color:var(--plum);">✓ Included</h3>
+      <ul>
+        <li>Hotel accommodations based on your selected package</li>
+        <li>Daily complimentary breakfast</li>
+        <li>Friday All Black Everything Welcome Dinner</li>
+        <li>Transportation for all scheduled group experiences</li>
+        <li>Saturday Black-owned winery experience with small bites, guided tastings, and the Welcome Sign stop</li>
+        <li>Sunday six-hour Napa Valley Wine Train experience — welcome sparkling wine, four-course gourmet meal, three winery visits, guided tastings</li>
+        <li>Professional on-site hosting and coordination throughout</li>
+        <li>All gratuities for included experiences</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="color:#a15b5b;">✕ Not Included</h3>
+      <ul>
+        <li>Airfare</li>
+        <li>Airport transportation (unless otherwise specified)</li>
+        <li>Travel insurance</li>
+        <li>Meals and beverages not specifically listed</li>
+        <li>Personal shopping, wine purchases, souvenirs, and shipping</li>
+        <li>Optional activities during free time</li>
+        <li>Incidental hotel charges</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="notice">
+    <h3>Important Booking & Insurance Information</h3>
+    <p>Travel insurance is strongly recommended. All payments are non-refundable and non-transferable, so protecting your investment is one of the most important decisions you can make.</p>
+    <p>Pricing and availability are subject to change until your reservation is confirmed and your deposit is received. Hotel room assignments are based on availability at check-in, regardless of the occupancy category selected — this is standard hotel practice, not determined by Ro.</p>
+    <p><strong>Non-refundable trip curation fee of $55 per person</strong> covers planning, vendor coordination, itinerary design, reservation management, and on-the-ground hosting.</p>
+  </div>
+</section>
+
+<section id="packages">
+  <h2>Available Packages</h2>
+  <p class="section-intro">All payments toward this experience are non-refundable and non-transferable. Please book as soon as possible — pricing and availability are subject to change until your deposit is received.</p>
+
+  <div class="packages">
+
+    <div class="package-card sold-out">
+      <span class="avail sold-out-tag">Sold Out</span>
+      <h3>3-Night Double Occupancy — Lead Offer</h3>
+      <p>October 7–11, 2027</p>
+      <div class="price-row">
+        <span class="price">$2,459</span>
+        <span class="deposit">Deposit: $150/person</span>
+      </div>
+      <p>Three-night hotel stay, daily breakfast, Friday Welcome Dinner, Saturday winery experience, the full Sunday Wine Train experience, and all included gratuities.</p>
+      <span class="button disabled">Sold Out</span>
+    </div>
+
+    <div class="package-card">
+      <span class="avail">Available until Aug 7, 2026 · 5 left</span>
+      <h3>3-Night Single Occupancy</h3>
+      <p>October 7–11, 2027</p>
+      <div class="price-row">
+        <span class="price">$3,159</span>
+        <span class="deposit">Deposit: $150/person</span>
+      </div>
+      <p>Three-night hotel stay, daily breakfast, Friday Welcome Dinner, Saturday winery experience, the full Sunday Wine Train experience, and all included gratuities. Eligible for the optional VIP Arrival Experience.</p>
+      <a class="button gold" href="https://traveljoy.com/bookings/YXmKm1foCfBMFXjw1ninc5yD/client/edit?package_token=d3FP5kqhZcwqd3zz6xrPb2XL" target="_blank" rel="noopener">Book Now</a>
+    </div>
+
+    <div class="package-card">
+      <span class="avail">Available until Aug 7, 2026 · 3 left</span>
+      <h3>2-Night Double Occupancy</h3>
+      <p>October 7–11, 2027</p>
+      <div class="price-row">
+        <span class="price">$2,019</span>
+        <span class="deposit">Deposit: $150/person</span>
+      </div>
+      <p>Two-night hotel stay, daily breakfast, Friday Welcome Dinner, Saturday winery experience, the full Sunday Wine Train experience, and all included gratuities.</p>
+      <a class="button gold" href="https://traveljoy.com/bookings/YXmKm1foCfBMFXjw1ninc5yD/client/edit?package_token=t8ALA5AqweSUpejT2GH2z6ns" target="_blank" rel="noopener">Book Now</a>
+    </div>
+
+    <div class="package-card">
+      <span class="avail">Available until Aug 7, 2026 · 1 left</span>
+      <h3>2-Night Single Occupancy</h3>
+      <p>October 7–11, 2027</p>
+      <div class="price-row">
+        <span class="price">$2,479</span>
+        <span class="deposit">Deposit: $150/person</span>
+      </div>
+      <p>Two-night hotel stay, daily breakfast, Friday Welcome Dinner, Saturday winery experience, the full Sunday Wine Train experience, and all included gratuities.</p>
+      <a class="button gold" href="https://traveljoy.com/bookings/YXmKm1foCfBMFXjw1ninc5yD/client/edit?package_token=prLw7FeQXKLCYBhx4XYbC9aP" target="_blank" rel="noopener">Book Now</a>
+    </div>
+
+  </div>
+
+  <div class="extra-option">
+    <h3>Extra Option: VIP Arrival Experience</h3>
+    <p><strong>$1,595 per person</strong> · Deposit: $75 · Available until August 6, 2027 · 8 left</p>
+    <p>Thursday, October 7, 2027 — the day before the official Bucket List Weekend begins. Only available to guests booked on the 3-Night package; requires a minimum of 10 guests to run. Includes private transportation, the hands-on winemaking and blending experience, your personalized bottle with custom label, cocktail hour, and an upscale dining experience.</p>
+    <p class="fine-print">If the 10-guest minimum isn't met, this add-on won't run and all VIP payments are fully refunded. Your Bucket List Weekend reservation is unaffected either way.</p>
+  </div>
+
+  <p class="faq-note">Questions before you book? Reach out to Ro directly through her <a href="index.html#contact" style="color:var(--plum);font-weight:600;">contact page</a>, or email crimsontravel@outlook.com.</p>
+</section>
+
+<footer>
+  <div class="logo">RO</div>
+  <p>Helping Women Embrace Life Again</p>
+  <div class="foot-links">
+    <a href="index.html">Back to Ro's Page</a>
+    <a href="https://instagram.com/crimsonwineandtravel" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</footer>
+
+</body>
+</html>
