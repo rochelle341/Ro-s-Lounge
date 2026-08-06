@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summer Whites & Wine | Charlotte Weekend 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream:#F7F2EB;
+  --plum:#5A1E4A;
+  --lilac:#D8C4E8;
+  --gold:#C8A05A;
+  --charcoal:#333333;
+  --white:#FAF8F4;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin:0;
+  font-family:Montserrat, sans-serif;
+  background:var(--cream);
+  color:var(--charcoal);
+  line-height:1.7;
+}
+
+header {
+  background:var(--plum);
+  color:var(--cream);
+  padding:24px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo {
+  font-family:Allura, cursive;
+  font-size:36px;
+  color:var(--gold);
+  text-decoration:none;
+}
+
+header nav a {
+  color:var(--cream);
+  text-decoration:none;
+  font-size:14px;
+}
+
+section {
+  padding:70px 8%;
+}
+
+h1, h2, h3 {
+  font-family:"Cormorant Garamond", serif;
+  color:var(--plum);
+}
+
+.hero {
+  text-align:center;
+  background:linear-gradient(135deg,rgba(216,196,232,.5),rgba(247,242,235,.95));
+}
+
+.hero .tag {
+  display:inline-block;
+  background:var(--gold);
+  color:var(--plum);
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  padding:6px 18px;
+  border-radius:20px;
+  margin-bottom:20px;
+}
+
+.hero h1 {
+  font-size:60px;
+  line-height:1.1;
+  margin:0 0 10px;
+}
+
+.hero .subline {
+  font-size:19px;
+  color:var(--plum);
+  margin-bottom:30px;
+}
+
+.section-intro {
+  text-align:center;
+  max-width:750px;
+  margin:0 auto 30px;
+  font-size:17px;
+}
+
+h2 {
+  font-size:42px;
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.gold-line {
+  width:90px;
+  height:3px;
+  background:var(--gold);
+  margin:25px auto;
+}
+
+.button {
+  display:inline-block;
+  background:var(--plum);
+  color:var(--cream);
+  padding:14px 26px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+}
+
+.button:hover {
+  background:#471939;
+}
+
+.button.gold {
+  background:var(--gold);
+  color:var(--plum);
+}
+
+.button.gold:hover {
+  background:#b58f4c;
+}
+
+.story {
+  background:var(--white);
+  max-width:800px;
+  margin:0 auto;
+}
+
+.details-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  max-width:900px;
+  margin:0 auto;
+}
+
+.detail-card {
+  background:var(--white);
+  border:1px solid var(--gold);
+  border-radius:20px;
+  padding:26px 30px;
+}
+
+.detail-card h3 {
+  font-size:24px;
+  margin-top:0;
+  margin-bottom:8px;
+}
+
+.notice {
+  background:var(--plum);
+  color:var(--cream);
+  border-radius:24px;
+  max-width:850px;
+  margin:40px auto 0;
+  padding:36px 40px;
+}
+
+.notice h3 {
+  color:var(--gold);
+  margin-top:0;
+}
+
+.notice p {
+  font-size:15px;
+}
+
+.included-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  max-width:900px;
+  margin:0 auto;
+}
+
+.included-grid h3 {
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.included-grid ul {
+  padding-left:20px;
+  margin:0;
+}
+
+.included-grid li {
+  margin-bottom:8px;
+}
+
+.itinerary-item {
+  max-width:750px;
+  margin:0 auto 26px;
+  background:var(--white);
+  border-left:4px solid var(--gold);
+  border-radius:0 16px 16px 0;
+  padding:22px 28px;
+}
+
+.itinerary-item .day-label {
+  font-family:"Cormorant Garamond", serif;
+  color:var(--gold);
+  font-size:20px;
+  margin-bottom:4px;
+}
+
+.packages {
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+  max-width:800px;
+  margin:0 auto;
+}
+
+.package-card {
+  background:var(--white);
+  border:1px solid var(--gold);
+  border-radius:24px;
+  padding:30px 34px;
+  box-shadow:0 12px 30px rgba(90,30,74,.08);
+}
+
+.package-card .avail {
+  display:inline-block;
+  font-size:12px;
+  color:var(--plum);
+  background:var(--lilac);
+  padding:3px 12px;
+  border-radius:14px;
+  margin-bottom:10px;
+  font-weight:600;
+}
+
+.package-card h3 {
+  font-size:26px;
+  margin:0 0 6px;
+}
+
+.package-card .price-row {
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  margin-bottom:14px;
+}
+
+.package-card .price {
+  font-family:"Cormorant Garamond", serif;
+  font-size:34px;
+  color:var(--plum);
+  font-weight:700;
+}
+
+.package-card .deposit {
+  font-size:14px;
+  color:var(--charcoal);
+}
+
+.package-card p {
+  font-size:15px;
+}
+
+.fine-print {
+  font-size:12px;
+  color:#777;
+  margin-top:14px;
+}
+
+.extra-option {
+  max-width:800px;
+  margin:40px auto 0;
+  background:var(--lilac);
+  border-radius:20px;
+  padding:26px 34px;
+  text-align:center;
+}
+
+.faq-note {
+  text-align:center;
+  max-width:750px;
+  margin:50px auto 0;
+  font-size:14px;
+  color:var(--charcoal);
+}
+
+footer {
+  background:var(--plum);
+  color:var(--cream);
+  text-align:center;
+  padding:40px 8%;
+}
+
+footer .logo {
+  font-size:44px;
+}
+
+footer .foot-links a {
+  color:var(--lilac);
+  margin:0 10px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+footer .foot-links a:hover {
+  color:var(--gold);
+}
+
+@media(max-width:850px){
+  .details-grid, .included-grid {
+    grid-template-columns:1fr;
+  }
+  .hero h1 {
+    font-size:40px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="index.html">RO</a>
+  <nav>
+    <a href="index.html">Back to Ro's Page</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <span class="tag">Charlotte, NC &nbsp;•&nbsp; August 28–30, 2026</span>
+  <h1>Summer Whites & Wine</h1>
+  <p class="subline">Some weekends you plan. Others you remember forever.</p>
+  <a class="button" href="#packages">See Packages & Book</a>
+</section>
+
+<section class="story">
+  <p><strong>Summer Whites & Wine: Charlotte Weekend 2026</strong> is an intimate women's getaway built around the things that actually matter — good wine, good people, meaningful conversation, and the kind of unhurried moments we don't get enough of in everyday life.</p>
+
+  <p>We're taking over Uptown Charlotte for a long weekend of live jazz, North Carolina wine country, champagne, and the kind of experiences that make a trip feel like more than just a trip. Think getting dressed up for no reason other than you wanted to. Sitting across from someone new and realizing you could talk for hours. Sipping something beautiful while the music plays and the evening slows down.</p>
+
+  <p>Summer Whites & Wine was designed to feel indulgent without being overwhelming — a soft landing from real life with the right women in a beautiful city.</p>
+
+  <p>Friday night, we gather in the hotel lobby for a champagne toast, glasses up, all white everything, before stepping out together for a live jazz experience that sets the tone for the entire weekend. It's the kind of entrance you plan an outfit around.</p>
+
+  <p>Saturday, we head into North Carolina wine country together for a full day of wine, conversation, laughter, and beautiful scenery. Guests also have the option to add an elevated caviar and wine pairing experience to their Saturday itinerary.</p>
+
+  <p>Sunday is yours to close out however feels right — whether that means joining us for an optional farewell brunch, exploring the city a little longer, or taking one last slow moment before heading home.</p>
+
+  <p>However long you join us, you'll leave full of wine, laughter, connection, and the kind of memories that come up in conversation for years.</p>
+
+  <div class="gold-line"></div>
+  <p style="text-align:center;font-family:'Cormorant Garamond', serif;font-size:28px;color:var(--plum);">
+    Charlotte is calling.<br>Come exactly as you are.<br><em>— Kiu &amp; Ro</em>
+  </p>
+</section>
+
+<section class="lilac">
+  <h2>The Details</h2>
+  <div class="details-grid">
+    <div class="detail-card">
+      <h3>Hotel</h3>
+      <p><strong>Hyatt House Charlotte Center City</strong><br>
+      A centrally located, upscale extended-stay hotel in the heart of Uptown Charlotte, walkable to dining, nightlife, and everything the weekend has to offer.</p>
+    </div>
+    <div class="detail-card">
+      <h3>Parking</h3>
+      <p>Valet parking available at the hotel for <strong>$55/night</strong>. Self-parking option available across the street at the Midnight Diner parking lot.</p>
+      <p style="font-size:14px;">Please note: the hotel requires a refundable <strong>$75 incidental authorization hold</strong> at check-in.</p>
+    </div>
+  </div>
+
+  <div class="notice">
+    <h3>Important to Know</h3>
+    <p>All experiences are ticketed and reserved exclusively for registered guests. Out of respect for the intimacy of this experience and the women who have secured their space, we're unable to accommodate walk-ins or drop-ins at any point during the weekend.</p>
+    <p>Flexible payment arrangements are available. Estimated package pricing may vary slightly based on occupancy preferences and final selections. Additional timing and event details will be shared with registered guests closer to the experience.</p>
+    <p><strong>All payments made toward Summer Whites & Wine: Charlotte Weekend 2026 are non-refundable and non-transferable.</strong></p>
+    <p>Travel insurance is strongly recommended to help protect your investment in the event of unexpected cancellations, delays, emergencies, or unforeseen circumstances.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What's Included</h2>
+  <div class="included-grid">
+    <div>
+      <h3 style="color:var(--plum);">✓ Included</h3>
+      <ul>
+        <li>One or two night stay at Hyatt House Charlotte Center City</li>
+        <li>Welcome champagne toast</li>
+        <li>Friday night jazz, small bites and cocktails</li>
+        <li>Full day Saturday winery experience &amp; transportation</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="color:#a15b5b;">✕ Not Included</h3>
+      <ul>
+        <li>Transportation to and from Charlotte</li>
+        <li>Meals, beverages, and personal expenses outside of listed experiences</li>
+        <li>Hotel valet parking fees, incidentals, and additional parking</li>
+        <li>Personal shopping, nightlife, and activities outside the group itinerary</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="lilac">
+  <h2>The Itinerary</h2>
+
+  <div class="itinerary-item">
+    <div class="day-label">Day 1 — Friday</div>
+    <p>Welcome toast, all-white night of jazz with small bites and cocktails. Transportation included.</p>
+  </div>
+
+  <div class="itinerary-item">
+    <div class="day-label">Day 2 — Saturday</div>
+    <p>Full day winery experience with charcuterie, plus an optional caviar add-on. Transportation included.</p>
+  </div>
+
+  <div class="itinerary-item">
+    <div class="day-label">Day 3 — Sunday (Optional)</div>
+    <p>For those who want to stretch the weekend just a little longer, there's a suggested meetup at one of two Charlotte favorites: The Asbury or Sixty Vines.</p>
+  </div>
+</section>
+
+<section id="packages">
+  <h2>Available Packages</h2>
+  <p class="section-intro">All payments toward this trip are non-refundable and non-transferable. Please review your schedule and package selection carefully before booking.</p>
+
+  <div class="packages">
+
+    <div class="package-card">
+      <span class="avail">Available until Aug 6, 2026 · 2 left</span>
+      <h3>Double Occupancy: Full Weekend</h3>
+      <p>Friday &amp; Saturday</p>
+      <div class="price-row">
+        <span class="price">$600</span>
+        <span class="deposit">Deposit: $150/person</span>
+      </div>
+      <p>Two nights at Hyatt House Charlotte Center City, Friday night jazz and cocktails, welcome champagne toast, full Saturday winery experience, and transportation for Saturday's wine country journey. Friday evening transportation via rideshare.</p>
+      <a class="button gold" href="https://traveljoy.com/bookings/s3Vjnn1ZkQsZKTbCJgjgbSoM/client/edit?package_token=QrWd4AEoDiYkaJcEzYEgmeUx" target="_blank" rel="noopener">Book Now</a>
+    </div>
+
+    <div class="package-card">
+      <span class="avail">Available until Aug 6, 2026 · 3 left</span>
+      <h3>Single Occupancy: Full Weekend</h3>
+      <p>Friday &amp; Saturday</p>
+      <div class="price-row">
+        <span class="price">$799</span>
+        <span class="deposit">Deposit: $150/person</span>
+      </div>
+      <p>Two nights at Hyatt House Charlotte Center City, Friday night jazz and cocktails, welcome champagne toast, full Saturday winery experience, and transportation for Saturday's wine country journey. Friday evening transportation via rideshare.</p>
+      <a class="button gold" href="https://traveljoy.com/bookings/s3Vjnn1ZkQsZKTbCJgjgbSoM/client/edit?package_token=u87kMTbRKZdtzw8o9Yu7y526" target="_blank" rel="noopener">Book Now</a>
+    </div>
+
+    <div class="package-card">
+      <span class="avail">Available until Aug 6, 2026 · 8 left</span>
+      <h3>Double Occupancy: Saturday Night + Wine</h3>
+      <p>Saturday only</p>
+      <div class="price-row">
+        <span class="price">$399</span>
+        <span class="deposit">Deposit: $150/person</span>
+      </div>
+      <p>One night at Hyatt House Charlotte Center City, full Saturday wine experience visiting three wineries, charcuterie, and transportation. Arrive Saturday, enjoy the day, check out Sunday morning or stay for an optional farewell lunch.</p>
+      <a class="button gold" href="https://traveljoy.com/bookings/s3Vjnn1ZkQsZKTbCJgjgbSoM/client/edit?package_token=KkerjQXwFEb2kTHMdxZawzuW" target="_blank" rel="noopener">Book Now</a>
+    </div>
+
+    <div class="package-card">
+      <span class="avail">Available until Aug 6, 2026 · 6 left</span>
+      <h3>Single Occupancy: Saturday Night + Wine</h3>
+      <p>Saturday only</p>
+      <div class="price-row">
+        <span class="price">$475</span>
+        <span class="deposit">Deposit: $150/person</span>
+      </div>
+      <p>One night at Hyatt House Charlotte Center City, full Saturday wine experience visiting three wineries, charcuterie, and transportation. Arrive Saturday, enjoy the day, check out Sunday morning or stay for an optional farewell lunch.</p>
+      <a class="button gold" href="https://traveljoy.com/bookings/s3Vjnn1ZkQsZKTbCJgjgbSoM/client/edit?package_token=muaXU7Q4u61EeT6UCATVseyN" target="_blank" rel="noopener">Book Now</a>
+    </div>
+
+    <div class="package-card">
+      <span class="avail">Available until Aug 6, 2026 · 3 left</span>
+      <h3>Saturday Wine Experience Only</h3>
+      <p>No hotel — just the day</p>
+      <div class="price-row">
+        <span class="price">$255</span>
+        <span class="deposit">Deposit: $150/person</span>
+      </div>
+      <p>One signature hosted full day through North Carolina wine country with luxury transportation included. No hotel, no extras — just a beautiful Saturday doing exactly what it sounds like.</p>
+      <a class="button gold" href="https://traveljoy.com/bookings/s3Vjnn1ZkQsZKTbCJgjgbSoM/client/edit?package_token=kezgZzqKttnpzZkwEDiDAESw" target="_blank" rel="noopener">Book Now</a>
+    </div>
+
+  </div>
+
+  <div class="extra-option">
+    <h3 style="margin-top:0;">Extra Option: Caviar & Wine Pairing</h3>
+    <p>An optional enhancement to the Saturday winery experience. Deposit: $10 (Total: $50). Available until August 7, 2026.</p>
+  </div>
+
+  <p class="faq-note">Questions before you book? Reach out to Ro directly through her <a href="index.html#contact" style="color:var(--plum);font-weight:600;">contact page</a>, or email crimsontravel@outlook.com.</p>
+</section>
+
+<footer>
+  <div class="logo">RO</div>
+  <p>Helping Women Embrace Life Again</p>
+  <div class="foot-links">
+    <a href="index.html">Back to Ro's Page</a>
+    <a href="https://instagram.com/crimsonwineandtravel" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</footer>
+
+</body>
+</html>
